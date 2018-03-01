@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>jQuery UI Droppable - Default functionality</title>
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!--
+      <link rel="stylesheet" href="/resources/demos/style.css"> -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+      <style>.panel { width: 200px; margin-top: 100px;}</style>
+
+      <!--
+      <style>
+      #draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+      #droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+      </style>
+    -->
+      <style media="screen">
+        #draggable { margin: 10px 10px 10px 0; }
+        #droppable { width: 300px; height: 200px; margin: 10px; }
+      </style>
+
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+      $( function() {
+        $( "#draggable" ).draggable();
+        $( "#droppable" ).droppable({
+          drop: function( event, ui ) {
+            $(this).removeClass("panel-default");
+            $(this).addClass("panel-success");
+
+            $(this)
+              .addClass( "ui-state-highlight" )
+              .find( "p" )
+                .html( "Dropped!" );
+          }
+        });
+      } );
+      </script>
+    </head>
+    <body>
+      <!-- class="ui-widget-content" -->
+        <div id="draggable" class="panel panel-primary">
+          <div class="panel-heading">
+            Panel draggable
+          </div>
+          <div class="panel-body">
+              <p>Drag me to my target</p>
+          </div>
+        </div>
+
+        <div id="droppable" class="panel panel-default">
+          <div class="panel-heading">
+            Panel Receiver
+          </div>
+          <div class="panel-body">
+            <p>Drop your box here. :)</p>
+          </div>
+        </div>
+    </body>
+</html>
