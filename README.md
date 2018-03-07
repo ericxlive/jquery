@@ -7,3 +7,6 @@ This is a JQuery guide
 
 * [Draggable Effect Script](https://github.com/ericxlive/jquery/blob/master/draggable.js)
 * [Draggable Effect Page](https://github.com/ericxlive/jquery/blob/master/draggable.html)
+
+* [Fade Effect Page](https://github.com/ericxlive/jquery/blob/master/fade.html)
+
